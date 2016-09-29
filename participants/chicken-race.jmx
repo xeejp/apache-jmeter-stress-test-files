@@ -188,12 +188,6 @@
           </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
           <hashTree/>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="一時停止" enabled="true">
-          <intProp name="ActionProcessor.action">1</intProp>
-          <intProp name="ActionProcessor.target">2</intProp>
-          <stringProp name="ActionProcessor.duration">10000</stringProp>
-        </TestAction>
-        <hashTree/>
         <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="fetch_contents開始" enabled="true">
           <stringProp name="serverAddress">xee.jp</stringProp>
           <stringProp name="serverPort">443</stringProp>
@@ -222,7 +216,7 @@
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="一時停止" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">2</intProp>
-          <stringProp name="ActionProcessor.duration">10000</stringProp>
+          <stringProp name="ActionProcessor.duration">15000</stringProp>
         </TestAction>
         <hashTree/>
         <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="exit" enabled="true">
@@ -232,8 +226,7 @@
           <stringProp name="protocol">wss</stringProp>
           <stringProp name="contextPath">/socket/websocket</stringProp>
           <stringProp name="contentEncoding">UTF-8</stringProp>
-          <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;exit&quot;,&quot;params&quot;:{&quot;time&quot;:&quot;2016-09-27T04:45:55.899Z&quot;,&quot;exitedUsers&quot;:0,&quot;prize&quot;:20}}},&quot;ref&quot;:&quot;4&quot;}
-</stringProp>
+          <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;exit&quot;,&quot;params&quot;:{&quot;time&quot;:&quot;2016-09-27T04:45:55.899Z&quot;,&quot;exitedUsers&quot;:0,&quot;prize&quot;:20}}},&quot;ref&quot;:&quot;4&quot;}</stringProp>
           <stringProp name="connectionTimeout">5000</stringProp>
           <stringProp name="responseTimeout">5000</stringProp>
           <boolProp name="ignoreSslErrors">true</boolProp>
