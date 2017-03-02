@@ -32,11 +32,11 @@
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">xee.jp</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4000</stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
             <stringProp name="HTTPSampler.path">/</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -52,7 +52,7 @@
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Referer" elementType="Header">
                   <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">https://xee.jp/</stringProp>
+                  <stringProp name="Header.value">http://localhost:4000/</stringProp>
                 </elementProp>
                 <elementProp name="Accept-Language" elementType="Header">
                   <stringProp name="Header.name">Accept-Language</stringProp>
@@ -94,11 +94,11 @@
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">xee.jp</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4000</stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">/experiment</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -114,7 +114,7 @@
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Referer" elementType="Header">
                   <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">https://xee.jp/</stringProp>
+                  <stringProp name="Header.value">http://localhost:4000/</stringProp>
                 </elementProp>
                 <elementProp name="Accept-Language" elementType="Header">
                   <stringProp name="Header.name">Accept-Language</stringProp>
@@ -162,11 +162,11 @@
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="WebSocket開始" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
+          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="phx_join" enabled="true">
+            <stringProp name="serverAddress">localhost</stringProp>
+            <stringProp name="serverPort">4000</stringProp>
             <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
+            <stringProp name="protocol">ws</stringProp>
             <stringProp name="contextPath">/socket/websocket</stringProp>
             <stringProp name="contentEncoding">UTF-8</stringProp>
             <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;phx_join&quot;,&quot;payload&quot;:{&quot;token&quot;:&quot;${token}&quot;},&quot;ref&quot;:&quot;1&quot;}</stringProp>
@@ -199,11 +199,11 @@
             <stringProp name="ActionProcessor.duration">10000</stringProp>
           </TestAction>
           <hashTree/>
-          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="phoenix" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
+          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="heartbeat" enabled="true">
+            <stringProp name="serverAddress">localhost</stringProp>
+            <stringProp name="serverPort">4000</stringProp>
             <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
+            <stringProp name="protocol">ws</stringProp>
             <stringProp name="contextPath">/socket/websocket</stringProp>
             <stringProp name="contentEncoding">UTF-8</stringProp>
             <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;ping&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;24&quot;}</stringProp>
@@ -225,11 +225,11 @@
           </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
           <hashTree/>
         </hashTree>
-        <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="WebSocket開始" enabled="true">
-          <stringProp name="serverAddress">xee.jp</stringProp>
-          <stringProp name="serverPort">443</stringProp>
+        <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="fetch_contents" enabled="true">
+          <stringProp name="serverAddress">localhost</stringProp>
+          <stringProp name="serverPort">4000</stringProp>
           <stringProp name="implementation">RFC6455 (v13)</stringProp>
-          <stringProp name="protocol">wss</stringProp>
+          <stringProp name="protocol">ws</stringProp>
           <stringProp name="contextPath">/socket/websocket</stringProp>
           <stringProp name="contentEncoding">UTF-8</stringProp>
           <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;fetch_contents&quot;, &quot;params&quot;: &quot;&quot;}},&quot;ref&quot;:&quot;2&quot;}</stringProp>
@@ -251,10 +251,10 @@
         </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
         <hashTree/>
         <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="正規表現開始" enabled="true">
-          <stringProp name="serverAddress">xee.jp</stringProp>
-          <stringProp name="serverPort">443</stringProp>
+          <stringProp name="serverAddress">localhost</stringProp>
+          <stringProp name="serverPort">4000</stringProp>
           <stringProp name="implementation">RFC6455 (v13)</stringProp>
-          <stringProp name="protocol">wss</stringProp>
+          <stringProp name="protocol">ws</stringProp>
           <stringProp name="contextPath">/socket/websocket</stringProp>
           <stringProp name="contentEncoding">UTF-8</stringProp>
           <stringProp name="requestPayload"></stringProp>
@@ -302,7 +302,7 @@
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="ループコントローラ" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">3</stringProp>
+          <stringProp name="LoopController.loops">10</stringProp>
         </LoopController>
         <hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If コントローラ" enabled="true">
@@ -311,10 +311,10 @@
           </IfController>
           <hashTree>
             <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="seller1" enabled="true">
-              <stringProp name="serverAddress">xee.jp</stringProp>
-              <stringProp name="serverPort">443</stringProp>
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
               <stringProp name="implementation">RFC6455 (v13)</stringProp>
-              <stringProp name="protocol">wss</stringProp>
+              <stringProp name="protocol">ws</stringProp>
               <stringProp name="contextPath">/socket/websocket</stringProp>
               <stringProp name="contentEncoding">UTF-8</stringProp>
               <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;ping&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;24&quot;}</stringProp>
@@ -336,10 +336,10 @@
             </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
             <hashTree/>
             <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="seller2" enabled="true">
-              <stringProp name="serverAddress">xee.jp</stringProp>
-              <stringProp name="serverPort">443</stringProp>
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
               <stringProp name="implementation">RFC6455 (v13)</stringProp>
-              <stringProp name="protocol">wss</stringProp>
+              <stringProp name="protocol">ws</stringProp>
               <stringProp name="contextPath">/socket/websocket</stringProp>
               <stringProp name="contentEncoding">UTF-8</stringProp>
               <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;bid&quot;,&quot;params&quot;:${__Random(${price}, 10000)}}},&quot;ref&quot;:&quot;16&quot;}</stringProp>
@@ -377,10 +377,10 @@
           </IfController>
           <hashTree>
             <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="buyer1" enabled="true">
-              <stringProp name="serverAddress">xee.jp</stringProp>
-              <stringProp name="serverPort">443</stringProp>
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
               <stringProp name="implementation">RFC6455 (v13)</stringProp>
-              <stringProp name="protocol">wss</stringProp>
+              <stringProp name="protocol">ws</stringProp>
               <stringProp name="contextPath">/socket/websocket</stringProp>
               <stringProp name="contentEncoding">UTF-8</stringProp>
               <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;ping&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;6&quot;}</stringProp>
@@ -402,10 +402,10 @@
             </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
             <hashTree/>
             <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="buyer2" enabled="true">
-              <stringProp name="serverAddress">xee.jp</stringProp>
-              <stringProp name="serverPort">443</stringProp>
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
               <stringProp name="implementation">RFC6455 (v13)</stringProp>
-              <stringProp name="protocol">wss</stringProp>
+              <stringProp name="protocol">ws</stringProp>
               <stringProp name="contextPath">/socket/websocket</stringProp>
               <stringProp name="contentEncoding">UTF-8</stringProp>
               <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;bid&quot;,&quot;params&quot;:${__Random(1,${price})}}},&quot;ref&quot;:&quot;16&quot;}</stringProp>
