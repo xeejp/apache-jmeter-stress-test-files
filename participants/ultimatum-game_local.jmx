@@ -32,11 +32,11 @@
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">xee.jp</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4000</stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
             <stringProp name="HTTPSampler.path">/</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -88,17 +88,17 @@
                 <elementProp name="token" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">token</stringProp>
-                  <stringProp name="Argument.value">t</stringProp>
+                  <stringProp name="Argument.value">a</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">xee.jp</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4000</stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">/experiment</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -163,10 +163,10 @@
             <hashTree/>
           </hashTree>
           <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="WebSocket開始" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
+            <stringProp name="serverAddress">localhost</stringProp>
+            <stringProp name="serverPort">4000</stringProp>
             <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
+            <stringProp name="protocol">ws</stringProp>
             <stringProp name="contextPath">/socket/websocket</stringProp>
             <stringProp name="contentEncoding">UTF-8</stringProp>
             <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;phx_join&quot;,&quot;payload&quot;:{&quot;token&quot;:&quot;${token}&quot;},&quot;ref&quot;:&quot;1&quot;}</stringProp>
@@ -200,10 +200,10 @@
           </TestAction>
           <hashTree/>
           <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="phoenix" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
+            <stringProp name="serverAddress">localhost</stringProp>
+            <stringProp name="serverPort">4000</stringProp>
             <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
+            <stringProp name="protocol">ws</stringProp>
             <stringProp name="contextPath">/socket/websocket</stringProp>
             <stringProp name="contentEncoding">UTF-8</stringProp>
             <stringProp name="requestPayload">{&quot;topic&quot;:&quot;phoenix&quot;,&quot;event&quot;:&quot;heartbeat&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;4&quot;}</stringProp>
@@ -225,169 +225,316 @@
           </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
           <hashTree/>
         </hashTree>
-        <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="fetch_contents開始" enabled="true">
-          <stringProp name="serverAddress">xee.jp</stringProp>
-          <stringProp name="serverPort">443</stringProp>
-          <stringProp name="implementation">RFC6455 (v13)</stringProp>
-          <stringProp name="protocol">wss</stringProp>
-          <stringProp name="contextPath">/socket/websocket</stringProp>
-          <stringProp name="contentEncoding">UTF-8</stringProp>
-          <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;FETCH_CONTENTS&quot;,&quot;params&quot;:null}},&quot;ref&quot;:&quot;2&quot;}
-</stringProp>
-          <stringProp name="connectionTimeout">5000</stringProp>
-          <stringProp name="responseTimeout">5000</stringProp>
-          <boolProp name="ignoreSslErrors">true</boolProp>
-          <boolProp name="streamingConnection">true</boolProp>
-          <stringProp name="connectionId">${token}</stringProp>
-          <stringProp name="responsePattern"></stringProp>
-          <stringProp name="closeConncectionPattern"></stringProp>
-          <stringProp name="proxyAddress"></stringProp>
-          <stringProp name="proxyPassword"></stringProp>
-          <stringProp name="proxyPort"></stringProp>
-          <stringProp name="proxyUsername"></stringProp>
-          <stringProp name="messageBacklog">3</stringProp>
-          <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
-        <hashTree>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正規表現抽出" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">role</stringProp>
-            <stringProp name="RegexExtractor.regex">role&quot;:&quot;([^&quot;]*)</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default"></stringProp>
-            <stringProp name="RegexExtractor.match_number"></stringProp>
-          </RegexExtractor>
-          <hashTree/>
-        </hashTree>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="5s停止" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">2</intProp>
-          <stringProp name="ActionProcessor.duration">10000</stringProp>
+          <stringProp name="ActionProcessor.duration">5000</stringProp>
         </TestAction>
         <hashTree/>
-        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If コントローラ" enabled="true">
-          <stringProp name="IfController.condition">&quot;${role}&quot;==&quot;dictator&quot;</stringProp>
-          <boolProp name="IfController.evaluateAll">false</boolProp>
-        </IfController>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="ループコントローラ" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </LoopController>
         <hashTree>
-          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="answer1" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="acc" elementType="Argument">
+                <stringProp name="Argument.name">acc</stringProp>
+                <stringProp name="Argument.value">${__Random(0,1)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="fetch_contents開始" enabled="true">
+            <stringProp name="serverAddress">localhost</stringProp>
+            <stringProp name="serverPort">4000</stringProp>
             <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
+            <stringProp name="protocol">ws</stringProp>
             <stringProp name="contextPath">/socket/websocket</stringProp>
             <stringProp name="contentEncoding">UTF-8</stringProp>
-            <stringProp name="requestPayload">{&quot;topic&quot;:&quot;phoenix&quot;,&quot;event&quot;:&quot;heartbeat&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;16&quot;}
+            <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;FETCH_CONTENTS&quot;,&quot;params&quot;:null}},&quot;ref&quot;:&quot;2&quot;}</stringProp>
+            <stringProp name="connectionTimeout">5000</stringProp>
+            <stringProp name="responseTimeout">5000</stringProp>
+            <boolProp name="ignoreSslErrors">true</boolProp>
+            <boolProp name="streamingConnection">true</boolProp>
+            <stringProp name="connectionId">${token}</stringProp>
+            <stringProp name="responsePattern"></stringProp>
+            <stringProp name="closeConncectionPattern"></stringProp>
+            <stringProp name="proxyAddress"></stringProp>
+            <stringProp name="proxyPassword"></stringProp>
+            <stringProp name="proxyPort"></stringProp>
+            <stringProp name="proxyUsername"></stringProp>
+            <stringProp name="messageBacklog">3</stringProp>
+            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正規表現抽出" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">role</stringProp>
+              <stringProp name="RegexExtractor.regex">role&quot;:&quot;([^&quot;]*)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="fetch_contents開始" enabled="true">
+            <stringProp name="serverAddress">localhost</stringProp>
+            <stringProp name="serverPort">4000</stringProp>
+            <stringProp name="implementation">RFC6455 (v13)</stringProp>
+            <stringProp name="protocol">ws</stringProp>
+            <stringProp name="contextPath">/socket/websocket</stringProp>
+            <stringProp name="contentEncoding">UTF-8</stringProp>
+            <stringProp name="requestPayload"></stringProp>
+            <stringProp name="connectionTimeout">5000</stringProp>
+            <stringProp name="responseTimeout">5000</stringProp>
+            <boolProp name="ignoreSslErrors">true</boolProp>
+            <boolProp name="streamingConnection">true</boolProp>
+            <stringProp name="connectionId">${token}</stringProp>
+            <stringProp name="responsePattern"></stringProp>
+            <stringProp name="closeConncectionPattern"></stringProp>
+            <stringProp name="proxyAddress"></stringProp>
+            <stringProp name="proxyPassword"></stringProp>
+            <stringProp name="proxyPort"></stringProp>
+            <stringProp name="proxyUsername"></stringProp>
+            <stringProp name="messageBacklog">3</stringProp>
+            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正規表現抽出" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">role</stringProp>
+              <stringProp name="RegexExtractor.regex">role&quot;:&quot;([^&quot;]*)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="fetch_contents開始" enabled="true">
+            <stringProp name="serverAddress">localhost</stringProp>
+            <stringProp name="serverPort">4000</stringProp>
+            <stringProp name="implementation">RFC6455 (v13)</stringProp>
+            <stringProp name="protocol">ws</stringProp>
+            <stringProp name="contextPath">/socket/websocket</stringProp>
+            <stringProp name="contentEncoding">UTF-8</stringProp>
+            <stringProp name="requestPayload"></stringProp>
+            <stringProp name="connectionTimeout">5000</stringProp>
+            <stringProp name="responseTimeout">5000</stringProp>
+            <boolProp name="ignoreSslErrors">true</boolProp>
+            <boolProp name="streamingConnection">true</boolProp>
+            <stringProp name="connectionId">${token}</stringProp>
+            <stringProp name="responsePattern"></stringProp>
+            <stringProp name="closeConncectionPattern"></stringProp>
+            <stringProp name="proxyAddress"></stringProp>
+            <stringProp name="proxyPassword"></stringProp>
+            <stringProp name="proxyPort"></stringProp>
+            <stringProp name="proxyUsername"></stringProp>
+            <stringProp name="messageBacklog">3</stringProp>
+            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正規表現抽出" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">role</stringProp>
+              <stringProp name="RegexExtractor.regex">role&quot;:&quot;([^&quot;]*)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If コントローラ" enabled="true">
+            <stringProp name="IfController.condition">&quot;${role}&quot;==&quot;proposer&quot;</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="answer1" enabled="true">
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
+              <stringProp name="implementation">RFC6455 (v13)</stringProp>
+              <stringProp name="protocol">ws</stringProp>
+              <stringProp name="contextPath">/socket/websocket</stringProp>
+              <stringProp name="contentEncoding">UTF-8</stringProp>
+              <stringProp name="requestPayload">{&quot;topic&quot;:&quot;phoenix&quot;,&quot;event&quot;:&quot;heartbeat&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;16&quot;}
 
 </stringProp>
-            <stringProp name="connectionTimeout">5000</stringProp>
-            <stringProp name="responseTimeout">5000</stringProp>
-            <boolProp name="ignoreSslErrors">true</boolProp>
-            <boolProp name="streamingConnection">true</boolProp>
-            <stringProp name="connectionId">${token}</stringProp>
-            <stringProp name="responsePattern"></stringProp>
-            <stringProp name="closeConncectionPattern"></stringProp>
-            <stringProp name="proxyAddress"></stringProp>
-            <stringProp name="proxyPassword"></stringProp>
-            <stringProp name="proxyPort"></stringProp>
-            <stringProp name="proxyUsername"></stringProp>
-            <stringProp name="messageBacklog">3</stringProp>
-            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
-          <hashTree/>
-          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="answer2" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
-            <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
-            <stringProp name="contextPath">/socket/websocket</stringProp>
-            <stringProp name="contentEncoding">UTF-8</stringProp>
-            <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;FINISH_ALLOCATING&quot;,&quot;params&quot;:100}},&quot;ref&quot;:&quot;9&quot;}</stringProp>
-            <stringProp name="connectionTimeout">5000</stringProp>
-            <stringProp name="responseTimeout">5000</stringProp>
-            <boolProp name="ignoreSslErrors">true</boolProp>
-            <boolProp name="streamingConnection">true</boolProp>
-            <stringProp name="connectionId">${token}</stringProp>
-            <stringProp name="responsePattern"></stringProp>
-            <stringProp name="closeConncectionPattern"></stringProp>
-            <stringProp name="proxyAddress"></stringProp>
-            <stringProp name="proxyPassword"></stringProp>
-            <stringProp name="proxyPort"></stringProp>
-            <stringProp name="proxyUsername"></stringProp>
-            <stringProp name="messageBacklog">3</stringProp>
-            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
-          <hashTree/>
-        </hashTree>
-        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If コントローラ" enabled="true">
-          <stringProp name="IfController.condition">&quot;${role}&quot;==&quot;responder&quot;</stringProp>
-          <boolProp name="IfController.evaluateAll">false</boolProp>
-        </IfController>
-        <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="回答待ち" enabled="true">
-            <intProp name="ActionProcessor.action">1</intProp>
-            <intProp name="ActionProcessor.target">2</intProp>
-            <stringProp name="ActionProcessor.duration">10000</stringProp>
-          </TestAction>
-          <hashTree/>
-          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="answer1" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
-            <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
-            <stringProp name="contextPath">/socket/websocket</stringProp>
-            <stringProp name="contentEncoding">UTF-8</stringProp>
-            <stringProp name="requestPayload">{&quot;topic&quot;:&quot;phoenix&quot;,&quot;event&quot;:&quot;heartbeat&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;7&quot;}
+              <stringProp name="connectionTimeout">5000</stringProp>
+              <stringProp name="responseTimeout">5000</stringProp>
+              <boolProp name="ignoreSslErrors">true</boolProp>
+              <boolProp name="streamingConnection">true</boolProp>
+              <stringProp name="connectionId">${token}</stringProp>
+              <stringProp name="responsePattern"></stringProp>
+              <stringProp name="closeConncectionPattern"></stringProp>
+              <stringProp name="proxyAddress"></stringProp>
+              <stringProp name="proxyPassword"></stringProp>
+              <stringProp name="proxyPort"></stringProp>
+              <stringProp name="proxyUsername"></stringProp>
+              <stringProp name="messageBacklog">3</stringProp>
+              <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+            <hashTree/>
+            <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="answer2" enabled="true">
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
+              <stringProp name="implementation">RFC6455 (v13)</stringProp>
+              <stringProp name="protocol">ws</stringProp>
+              <stringProp name="contextPath">/socket/websocket</stringProp>
+              <stringProp name="contentEncoding">UTF-8</stringProp>
+              <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;CHANGE_ALLO_TEMP&quot;,&quot;params&quot;:1000}},&quot;ref&quot;:&quot;8&quot;}</stringProp>
+              <stringProp name="connectionTimeout">5000</stringProp>
+              <stringProp name="responseTimeout">5000</stringProp>
+              <boolProp name="ignoreSslErrors">true</boolProp>
+              <boolProp name="streamingConnection">true</boolProp>
+              <stringProp name="connectionId">${token}</stringProp>
+              <stringProp name="responsePattern"></stringProp>
+              <stringProp name="closeConncectionPattern"></stringProp>
+              <stringProp name="proxyAddress"></stringProp>
+              <stringProp name="proxyPassword"></stringProp>
+              <stringProp name="proxyPort"></stringProp>
+              <stringProp name="proxyUsername"></stringProp>
+              <stringProp name="messageBacklog">3</stringProp>
+              <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If コントローラ" enabled="true">
+            <stringProp name="IfController.condition">&quot;${role}&quot;==&quot;responder&quot; &amp;&amp; ${acc} &gt;= 0.5</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="回答待ち" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">2</intProp>
+              <stringProp name="ActionProcessor.duration">10000</stringProp>
+            </TestAction>
+            <hashTree/>
+            <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="OK1" enabled="true">
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
+              <stringProp name="implementation">RFC6455 (v13)</stringProp>
+              <stringProp name="protocol">ws</stringProp>
+              <stringProp name="contextPath">/socket/websocket</stringProp>
+              <stringProp name="contentEncoding">UTF-8</stringProp>
+              <stringProp name="requestPayload">{&quot;topic&quot;:&quot;phoenix&quot;,&quot;event&quot;:&quot;heartbeat&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;7&quot;}
 </stringProp>
-            <stringProp name="connectionTimeout">5000</stringProp>
-            <stringProp name="responseTimeout">5000</stringProp>
-            <boolProp name="ignoreSslErrors">true</boolProp>
-            <boolProp name="streamingConnection">true</boolProp>
-            <stringProp name="connectionId">${token}</stringProp>
-            <stringProp name="responsePattern"></stringProp>
-            <stringProp name="closeConncectionPattern"></stringProp>
-            <stringProp name="proxyAddress"></stringProp>
-            <stringProp name="proxyPassword"></stringProp>
-            <stringProp name="proxyPort"></stringProp>
-            <stringProp name="proxyUsername"></stringProp>
-            <stringProp name="messageBacklog">3</stringProp>
-            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
-          <hashTree/>
-          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="answer2" enabled="true">
-            <stringProp name="serverAddress">xee.jp</stringProp>
-            <stringProp name="serverPort">443</stringProp>
-            <stringProp name="implementation">RFC6455 (v13)</stringProp>
-            <stringProp name="protocol">wss</stringProp>
-            <stringProp name="contextPath">/socket/websocket</stringProp>
-            <stringProp name="contentEncoding">UTF-8</stringProp>
-            <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;RESPONSE_OK&quot;,&quot;params&quot;:{&quot;value&quot;:${__V(value${__Random(0,10)})},&quot;change_count&quot;:1,&quot;now_round&quot;:1}}},&quot;ref&quot;:&quot;9&quot;}
+              <stringProp name="connectionTimeout">5000</stringProp>
+              <stringProp name="responseTimeout">5000</stringProp>
+              <boolProp name="ignoreSslErrors">true</boolProp>
+              <boolProp name="streamingConnection">true</boolProp>
+              <stringProp name="connectionId">${token}</stringProp>
+              <stringProp name="responsePattern"></stringProp>
+              <stringProp name="closeConncectionPattern"></stringProp>
+              <stringProp name="proxyAddress"></stringProp>
+              <stringProp name="proxyPassword"></stringProp>
+              <stringProp name="proxyPort"></stringProp>
+              <stringProp name="proxyUsername"></stringProp>
+              <stringProp name="messageBacklog">3</stringProp>
+              <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+            <hashTree/>
+            <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="OK2" enabled="true">
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
+              <stringProp name="implementation">RFC6455 (v13)</stringProp>
+              <stringProp name="protocol">ws</stringProp>
+              <stringProp name="contextPath">/socket/websocket</stringProp>
+              <stringProp name="contentEncoding">UTF-8</stringProp>
+              <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;RESPONSE_OK&quot;,&quot;params&quot;:{&quot;value&quot;:${__V(value${__Random(0,10)})},&quot;change_count&quot;:1,&quot;accept&quot;:true,&quot;now_round&quot;:1}}},&quot;ref&quot;:&quot; ${acc} &quot;}</stringProp>
+              <stringProp name="connectionTimeout">5000</stringProp>
+              <stringProp name="responseTimeout">5000</stringProp>
+              <boolProp name="ignoreSslErrors">true</boolProp>
+              <boolProp name="streamingConnection">true</boolProp>
+              <stringProp name="connectionId">${token}</stringProp>
+              <stringProp name="responsePattern"></stringProp>
+              <stringProp name="closeConncectionPattern"></stringProp>
+              <stringProp name="proxyAddress"></stringProp>
+              <stringProp name="proxyPassword"></stringProp>
+              <stringProp name="proxyPort"></stringProp>
+              <stringProp name="proxyUsername"></stringProp>
+              <stringProp name="messageBacklog">3</stringProp>
+              <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If コントローラ" enabled="true">
+            <stringProp name="IfController.condition">&quot;${role}&quot;==&quot;responder&quot; &amp;&amp;  ${acc} &lt;= 0.5</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="回答待ち" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">2</intProp>
+              <stringProp name="ActionProcessor.duration">10000</stringProp>
+            </TestAction>
+            <hashTree/>
+            <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="NG1" enabled="true">
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
+              <stringProp name="implementation">RFC6455 (v13)</stringProp>
+              <stringProp name="protocol">ws</stringProp>
+              <stringProp name="contextPath">/socket/websocket</stringProp>
+              <stringProp name="contentEncoding">UTF-8</stringProp>
+              <stringProp name="requestPayload">{&quot;topic&quot;:&quot;phoenix&quot;,&quot;event&quot;:&quot;heartbeat&quot;,&quot;payload&quot;:{},&quot;ref&quot;:&quot;7&quot;}
 </stringProp>
-            <stringProp name="connectionTimeout">5000</stringProp>
-            <stringProp name="responseTimeout">5000</stringProp>
-            <boolProp name="ignoreSslErrors">true</boolProp>
-            <boolProp name="streamingConnection">true</boolProp>
-            <stringProp name="connectionId">${token}</stringProp>
-            <stringProp name="responsePattern"></stringProp>
-            <stringProp name="closeConncectionPattern"></stringProp>
-            <stringProp name="proxyAddress"></stringProp>
-            <stringProp name="proxyPassword"></stringProp>
-            <stringProp name="proxyPort"></stringProp>
-            <stringProp name="proxyUsername"></stringProp>
-            <stringProp name="messageBacklog">3</stringProp>
-            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
-          <hashTree/>
+              <stringProp name="connectionTimeout">5000</stringProp>
+              <stringProp name="responseTimeout">5000</stringProp>
+              <boolProp name="ignoreSslErrors">true</boolProp>
+              <boolProp name="streamingConnection">true</boolProp>
+              <stringProp name="connectionId">${token}</stringProp>
+              <stringProp name="responsePattern"></stringProp>
+              <stringProp name="closeConncectionPattern"></stringProp>
+              <stringProp name="proxyAddress"></stringProp>
+              <stringProp name="proxyPassword"></stringProp>
+              <stringProp name="proxyPort"></stringProp>
+              <stringProp name="proxyUsername"></stringProp>
+              <stringProp name="messageBacklog">3</stringProp>
+              <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+            <hashTree/>
+            <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="NG2" enabled="true">
+              <stringProp name="serverAddress">localhost</stringProp>
+              <stringProp name="serverPort">4000</stringProp>
+              <stringProp name="implementation">RFC6455 (v13)</stringProp>
+              <stringProp name="protocol">ws</stringProp>
+              <stringProp name="contextPath">/socket/websocket</stringProp>
+              <stringProp name="contentEncoding">UTF-8</stringProp>
+              <stringProp name="requestPayload">{&quot;topic&quot;:&quot;${topic}&quot;,&quot;event&quot;:&quot;client&quot;,&quot;payload&quot;:{&quot;body&quot;:{&quot;action&quot;:&quot;RESPONSE_NG&quot;,&quot;params&quot;:{&quot;value&quot;:${__V(value${__Random(0,10)})},&quot;change_count&quot;:1,&quot;accept&quot;:true,&quot;now_round&quot;:1}}},&quot;ref&quot;:&quot;${acc} &quot;}</stringProp>
+              <stringProp name="connectionTimeout">5000</stringProp>
+              <stringProp name="responseTimeout">5000</stringProp>
+              <boolProp name="ignoreSslErrors">true</boolProp>
+              <boolProp name="streamingConnection">true</boolProp>
+              <stringProp name="connectionId">${token}</stringProp>
+              <stringProp name="responsePattern"></stringProp>
+              <stringProp name="closeConncectionPattern"></stringProp>
+              <stringProp name="proxyAddress"></stringProp>
+              <stringProp name="proxyPassword"></stringProp>
+              <stringProp name="proxyPort"></stringProp>
+              <stringProp name="proxyUsername"></stringProp>
+              <stringProp name="messageBacklog">3</stringProp>
+              <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="ユーザー定義変数" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+            <hashTree/>
+          </hashTree>
         </hashTree>
       </hashTree>
       <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="グラフ表示" enabled="true">
