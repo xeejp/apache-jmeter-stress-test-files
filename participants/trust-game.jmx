@@ -88,7 +88,7 @@
                 <elementProp name="token" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">token</stringProp>
-                  <stringProp name="Argument.value">t</stringProp>
+                  <stringProp name="Argument.value">a</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -190,7 +190,7 @@
         </hashTree>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="待ち時間指定(10秒x回数)" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">12</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
           <TestAction guiclass="TestActionGui" testclass="TestAction" testname="10s停止" enabled="true">
